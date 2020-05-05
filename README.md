@@ -2,7 +2,7 @@
 
 Vim plugin to automate simple but repetitive tasks during java development.
 
-# Installation with Vundle
+## Installation with Vundle
 
 Simply include 
 
@@ -22,7 +22,7 @@ call vundle#end()
 ```
 sections.
 
-# Usage
+## Usage
 
 Any time you open a buffer with java extension, the plugin will check if the file is empty and populate it with the right package and classname.
-For the package name it searches for standard maven structures like pom.xml and goes from there./
+For the package name it searches for standard maven structures like pom.xml and goes from there.

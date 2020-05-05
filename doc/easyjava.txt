@@ -1,0 +1,45 @@
+*easyjava.txt* Automating simple repetitive tasks during java development
+
+=====================================================================================
+CONTENTS                                                           *EasyJavaContents*
+
+1. Usage .......... |EasyJavaUsage|
+2. License ........ |EasyJavaLicense|
+3. Bugs ........... |EasyJavaBugs|
+4. Contributing ... |EasyJavaContributing|
+5. Changelog ...... |EasyJavaChangelog|
+6. Plans .......... |EasyJavaPlans|
+=====================================================================================
+Section 1: Usage                                                      *EasyJavaUsage*
+
+The plugin currently does one thing. Fills out the package and classname of empty java files. 
+To fulfill this job it looks for pom.xml up in the directory structure and use that.
+=====================================================================================
+Section 2: License                                                  *EasyJavaLicense*
+
+EasyJava is licensed under the MIT license. You can find more information about it at 
+
+https://choosealicense.com/licenses/mit/
+
+=====================================================================================
+Section 3: Bugs                                                        *EasyJavaBugs*
+
+Currently there are no known bugs. If you find any feel free to report them at 
+https://github.com/Tacsiazuma/easyjava.vim/issues
+
+=====================================================================================
+Section 4: Contributing                                        *EasyJavaContributing*
+
+If you think you can add some java specific lightweight functionality then feel free to create PR's.
+One thing to note that this plugin does not plan to include snippets functionality nor use LSP.
+
+=====================================================================================
+Section 5: Changelog                                              *EasyJavaChangelog*
+
+- Autocommand for empty java files which fills out the package and classname section in the file.
+
+=====================================================================================
+Section 6: Plans                                                      *EasyJavaPlans*
+
+For the future I plan to extend the current functionality to handle gradle projects as well.
+Running gradle and maven tasks should be available in customizable functions.

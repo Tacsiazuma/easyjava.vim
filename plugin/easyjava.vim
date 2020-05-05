@@ -3,9 +3,14 @@
 " Last Change:	2020 May 5
 " Maintainer:	Papp Krisztián <krisztian@letscode.hu>
 
+if exists('g:did_easy_java_setup') 
+  finish
+endif
+let g:did_easy_java_setup=1
+let s:plugindir = expand('<sfile>:p:h:h')
 fun! s:SetupJavaClass()
     exe "%s/__CLASS_NAME__/" . expand('%:t:r')
-    exe "%s/__PACKAGE__/" . GetPackageStatement()
+    exe "%s/__PACKAGE__/" . s:GetPackageStatement()
   endfun
 
 function! s:GetPackageStatement()
@@ -63,4 +68,4 @@ function! s:GetPomFile(pwd)
     endif
 endfunction
 
-autocmd BufRead *.java if getfsize(expand('%'))==0|$r ~/.vim/templates/skeleton.java|call s:SetupJavaClass()|endif
+autocmd BufRead *.java if getfsize(expand('%'))==0|:execute "0read". fnameescape(s:plugindir)."/skeleton.java"|call s:SetupJavaClass()|endif

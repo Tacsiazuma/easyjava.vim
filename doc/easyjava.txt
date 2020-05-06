@@ -12,8 +12,12 @@ CONTENTS                                                           *EasyJavaCont
 =====================================================================================
 Section 1: Usage                                                      *EasyJavaUsage*
 
-The plugin currently does one thing. Fills out the package and classname of empty java files. 
+The plugin currently does a few thing. Fills out the package and classname of empty java files. 
 To fulfill this job it looks for pom.xml up in the directory structure and use that.
+
+If you open up an empty pom.xml buffer then it will fill it out with the required content
+including junit as a testing dependency. It also creates the maven default folder structure under the project root.
+
 =====================================================================================
 Section 2: License                                                  *EasyJavaLicense*
 
@@ -37,6 +41,7 @@ One thing to note that this plugin does not plan to include snippets functionali
 Section 5: Changelog                                              *EasyJavaChangelog*
 
 - Autocommand for empty java files which fills out the package and classname section in the file.
+- Autocommand for empty pom.xml files which fills out the required content and creates the maven default folders.
 
 =====================================================================================
 Section 6: Plans                                                      *EasyJavaPlans*

@@ -68,4 +68,16 @@ function! s:GetPomFile(pwd)
     endif
 endfunction
 
+function s:SetupMavenProject()
+    execute "0read". fnameescape(s:plugindir)."/pom.xml"
+    write
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src"
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src/main"
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src/test"
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src/main/java"
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src/main/resources"
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src/test/java"
+    execute "silent! !mkdir -p ".shellescape(expand('%:p:h'),1). "/src/test/resources"
+endfunction
 autocmd BufRead *.java if getfsize(expand('%'))==0|:execute "0read". fnameescape(s:plugindir)."/skeleton.java"|call s:SetupJavaClass()|endif
+autocmd BufRead pom.xml if getfsize(expand('%'))==0|call s:SetupMavenProject()|endif

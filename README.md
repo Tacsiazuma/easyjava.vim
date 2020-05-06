@@ -26,3 +26,6 @@ sections.
 
 Any time you open a buffer with java extension, the plugin will check if the file is empty and populate it with the right package and classname.
 For the package name it searches for standard maven structures like pom.xml and goes from there.
+
+If you open up an empty pom.xml then it will populate it with a template pom.xml, with a single dependency junit.
+It also checks if the source folders are created (src/main, src/test) and if not then it will create them for you.

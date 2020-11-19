@@ -30,6 +30,7 @@ For the package name it searches for standard maven structures like pom.xml and 
 If you open up an empty pom.xml then it will populate it with a template pom.xml, with a single dependency junit.
 It also checks if the source folders are created (src/main, src/test) and if not then it will create them for you.
 
+
 ## Running tests
 
 Tests are run using a Ruby test runner, so you'll have to have Ruby installed.

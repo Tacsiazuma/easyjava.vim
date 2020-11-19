@@ -12,7 +12,6 @@ describe "After creating a pom.xml and navigating into it"
     end
 
     it "should fill the pom.xml"
-
         !touch pom.xml
         view pom.xml
         call SetupMavenProject()
@@ -20,11 +19,31 @@ describe "After creating a pom.xml and navigating into it"
     end
 
     it "should create main resources dir"
-
         !touch pom.xml
         view pom.xml
         call SetupMavenProject()
         Expect isdirectory("./src/main/resources") to_be_true
+    end
+
+    it "should create test resources dir"
+        !touch pom.xml
+        view pom.xml
+        call SetupMavenProject()
+        Expect isdirectory("./src/test/resources") to_be_true
+    end
+
+    it "should create main java dir"
+        !touch pom.xml
+        view pom.xml
+        call SetupMavenProject()
+        Expect isdirectory("./src/main/java") to_be_true
+    end
+
+    it "should create test java dir"
+        !touch pom.xml
+        view pom.xml
+        call SetupMavenProject()
+        Expect isdirectory("./src/test/java") to_be_true
     end
 
 end

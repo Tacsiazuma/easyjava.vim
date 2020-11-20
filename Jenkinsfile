@@ -2,8 +2,7 @@ node('k3s') {
     container('ruby') {
         sh 'echo Building ${CHANGE_BRANCH}...'
         git branch: env.CHANGE_BRANCH, credentialsId: 'jenkins-tacsiazuma-admin-user', url: 'https://github.com/Tacsiazuma/easyjava.vim'
-        sh '''
-        #!/bin/bash
+        sh '''#!/bin/bash
         gem install vim-flavor
         curl https://raw.githubusercontent.com/kana/vim-version-manager/master/bin/vvm | python - setup; true
         source ~/.vvm/etc/login

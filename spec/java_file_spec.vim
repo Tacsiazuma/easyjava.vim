@@ -25,6 +25,20 @@ describe "After creating a .java file inside a multi module maven project"
         Expect getline(1) == "package hu.letscode;"
     end
 
+    it "should fill the package name when module name contains hyphen"
+        !touch sample-module/src/test/java/hu/letscode/FileNameTest.java
+        view! sample-module/src/test/java/hu/letscode/FileNameTest.java
+        call SetupJavaClass()
+        Expect getline(1) == "package hu.letscode;"
+    end
+
+    it "should not repeate content in the file"
+        !touch sample_module/src/main/java/hu/letscode/FileName.java
+        view! sample_module/src/main/java/hu/letscode/FileName.java
+        call SetupJavaClass()
+        Expect getline(6) == ""
+    end
+
     it "should fill the class name and brackets when inside the main path"
         !touch sample_module/src/main/java/hu/letscode/FileName.java
         view! sample_module/src/main/java/hu/letscode/FileName.java

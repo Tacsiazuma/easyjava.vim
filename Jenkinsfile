@@ -1,4 +1,4 @@
-node('k3s') {
+node('ruby-builder') {
     container('ruby') {
         if (env.CHANGE_BRANCH) {
             env.BRANCH_TO_BUILD = env.CHANGE_BRANCH
